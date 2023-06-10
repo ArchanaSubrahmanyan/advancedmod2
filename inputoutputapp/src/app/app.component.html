@@ -1,0 +1,47 @@
+<div class="container">
+  <h3>Login Form</h3>
+    Enter Name: <input type="text" class="form-control" [(ngModel)]="Name"> <br>
+    Enter PhoneNumber: <input type="text" class="form-control" [(ngModel)]="Phone"> <br>
+    Enter DOB: <input type="text" class="form-control" [(ngModel)]="dob"> <br>
+    <input type="button" value="View" class="btn btn-primary" (click)="viewDetails()">
+{{value}}
+
+    <br>
+<hr>
+<hr>
+
+<div class="container">
+  ENTER PRODUCT ID <input type="text" [(ngModel)]="proid"><br>
+  ENTER PRODUCT NAME <input type="text" [(ngModel)]="proname"><br>
+  ENTER PRODUCT DESCRIPTION <input type="text" [(ngModel)]="prodesc"><br>
+  <input type="button" value="submit" (click)="displayTable()"> {{value1}}
+</div>
+<hr>
+<hr>
+
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
+
+<hr>
+<hr>
+
+<button (click)="increment()">Increment</button>&nbsp;
+
+<button (click)="decrement()">decrement</button>
+
+<hr>
+<hr>
+<h2>should we go for a movie</h2>
+<h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
+
+<hr>
+<hr>
+
+  <app-form [parentData1]="parentData1" [parentData2]="parentData2" [parentData3]="parentData3" (submitdata)="submitdata($event)"></app-form>
+  <app-product [parentId]="parentId" [parentName]="parentName" [parentDesc]="parentDesc" (tabledata)="tabledata($event)"></app-product>
+  <app-list (listdata)="addItem($event)"></app-list>
+  <app-increment [count]="counter"></app-increment>
+  <app-agree *ngFor="let voter of voters" [name]="voter" (voted)="onVoted($event)"></app-agree>
+
+</div>
